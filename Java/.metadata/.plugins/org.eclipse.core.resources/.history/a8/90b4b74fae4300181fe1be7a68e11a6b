@@ -1,0 +1,14 @@
+package com.internousdev.webproj4.dao;
+
+public class LoginDAO {
+	public String username;
+	public String password;
+
+	public List<LoginDTO> LoginDTOList = new ArrayList<LoginDTO>();
+
+	public List<LoginDTO> select(String username, String password) {
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+	}
+
+}

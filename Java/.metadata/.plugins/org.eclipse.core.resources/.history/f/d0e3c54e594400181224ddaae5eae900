@@ -1,0 +1,7 @@
+package com.internousdev.webproj5.dao;
+
+public class HelloStrutsDAO {
+
+	List<HelloStrutsDTO> helloStrutsDTO = new ArrayList<HelloStrutsDTO>();
+
+}
