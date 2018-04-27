@@ -1,0 +1,8 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+public class BuyItemAction extends ActionSupport implements
+
+
+}
