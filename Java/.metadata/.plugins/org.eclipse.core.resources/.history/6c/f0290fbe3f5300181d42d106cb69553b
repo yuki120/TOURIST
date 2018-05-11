@@ -1,0 +1,51 @@
+package com.internousdev.ecsite.dto;
+
+public class LoginDTO {
+
+	private String loginId;
+	private String loginPassword;
+	private String familyName;
+	private String firstName;
+	private boolean loginFlg = false;
+
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getFamilyName() {
+		return familyName;
+	}
+
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public boolean getLoginFlg () {
+		return loginFlg;
+	}
+
+	public void setLoginFlg (boolean loginFlg) {
+		this.loginFlg = loginFlg;
+	}
+
+}

@@ -1,0 +1,174 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.UserCreateConfirmDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
+	private String loginId;
+	private String loginPassword;
+	private String familyName;
+	private String firstName;
+	private String familyNameKana;
+	private String firstNameKana;
+	private int sex;
+	private String email;
+	private String errorId;
+	private String errorPass;
+	private String errorName;
+	private String errorNameKana;
+	private String errorEmail;
+
+	public Map<String, Object> session;
+
+	public String execute() {
+		String result = SUCCESS;
+		UserCreateConfirmDAO userCreateConfirmDAO = new UserCreateConfirmDAO();
+
+		if (userId.equals("")) {
+			errorId = "【ユーザーIDを入力してください】";
+			result = ERROR;
+		}
+
+		else if (!(userId.length() >= 1 && userId.length() <= 8)) {
+			errorId = "【ユーザーIDは8文字以内で入力してください】";
+			result = ERROR;
+		}
+
+		//文字種エラー
+		else if (!(userId.matches("^[a-zA-Z0-9]+$"))) {
+			errorId = "【ユーザーIDは半角英数字で入力してください】";
+			result = ERROR;
+		}
+		//ID重複チェック
+		else if (userCreateConfirmDAO.getUserId(userId)) {
+			errorId = "【そのIDは既に使われています】";
+			result = ERROR;
+		}
+
+		/*パスワード*/
+		//未入力
+		if (userPassword.equals("")) {
+			errorPass = "【パスワードを入力してください】";
+			result = ERROR;
+		}
+
+		//文字数エラー
+		else if (!(userPassword.length() <= 16)) {
+			errorPass = "【パスワードは16文字以内で入力してください】";
+			result = ERROR;
+		}
+
+		//文字種エラー
+		else if (!(userPassword.matches("^[a-zA-Z0-9]+$"))) {
+			errorPass = "【パスワードは半角英数字で入力してください】";
+			result = ERROR;
+		}
+
+		/*名前（姓・名）*/
+		//未入力
+		if (familyName.equals("") || firstName.equals("")) {
+			errorName = "【姓・名を入力してください】";
+			result = ERROR;
+		}
+
+		//文字数エラー
+		else if (!(familyName.length() >= 1 && familyName.length() <= 16)
+				|| !(firstName.length() >= 1 && firstName.length() <= 16)) {
+			errorName = "【姓・名はそれぞれ16文字以内で入力してください】";
+			result = ERROR;
+		}
+
+		//文字種エラー
+		else if (!(familyName.matches("^[a-zA-Zぁ-ゞ一-龠]+$")) || !(firstName.matches("^[a-zA-Zぁ-ゞ一-龠]+$"))) {
+			errorName = "【姓・名は半角英字,漢字,ひらがなで入力してください】";
+			result = ERROR;
+		}
+
+		/*名前（せい・めい）*/
+		//未入力
+		if (familyNameKana.equals("") || firstNameKana.equals("")) {
+			errorNameKana = "【せい・めいを入力してください】";
+			result = ERROR;
+		}
+
+		//文字数エラー
+		else if (!(familyNameKana.length() >= 1 && familyNameKana.length() <= 16)
+				|| !(firstNameKana.length() >= 1 && firstNameKana.length() <= 16)) {
+			errorNameKana = "【せい・めいはそれぞれ16文字以内で入力してください】";
+			result = ERROR;
+		}
+
+		//文字種エラー
+		else if (!(familyNameKana.matches("^[ぁ-ゞ]+$")) || !(firstNameKana.matches("^[ぁ-ゞ]+$"))) {
+			errorNameKana = "【せい・めいは「ひらがな」で入力してください】";
+			result = ERROR;
+		}
+
+		/*メールアドレス*/
+		//未入力
+		if (email.equals("")) {
+			errorEmail = "【メールアドレスを入力してください】";
+			result = ERROR;
+		}
+
+		//文字数エラー
+		else if (!(email.length() >= 14 && email.length() <= 32)) {
+			errorEmail = "【メールアドレスは14文字以上32文字以下で入力してください】";
+			result = ERROR;
+		}
+
+		//文字種エラー @ 及び . を必要とする
+		else if (!(email.matches(
+				"^[a-zA-Z0-9@.,;:!#$%&'*+-/=?^_`{|}~]+@+[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)+.+[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$"))) {
+			errorEmail = "【メールアドレスは半角英数字記号で、正しいものを入力してください】";
+			result = ERROR;
+		}
+		return result;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String UserId) {
+		this.userId = userId;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMassage) {
+		this.errorMessage = errorMassage;
+	}
+
+}

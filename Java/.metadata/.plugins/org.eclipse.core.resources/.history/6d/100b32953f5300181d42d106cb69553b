@@ -1,0 +1,39 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+
+public class UserCreateCompleteDAO {
+	private DateUtil dateUtil = new DateUtil();
+
+	private String sql = "INSERT INTO login_user_transaction(login_id, login_pass, family_name, first_name, family_name_kana, first_name_kana, sex, email, insert_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+	public void createUser(String userId, String userPassword, String familyName, String firstName, String familyNameKana, String firstNameKana, String sex, String email) throws SQLException {
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setString(2, userPassword);
+			ps.setString(3, familyName);
+			ps.setString(4, firstName);
+			ps.setString(5, familyNameKana);
+			ps.setString(6, firstNameKana);
+			ps.setString(7, sex);
+			ps.setString(8, email);
+			ps.setString(9, dateUtil.getDate());
+
+			ps.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+		}
+	}
+}

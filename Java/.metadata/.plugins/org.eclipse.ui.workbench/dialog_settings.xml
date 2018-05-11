@@ -30,4 +30,14 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\internousdev\Desktop"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-takada\test\photos"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-takada\test\Java\ecsite\WebContent\photos"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-takada\test\Java\photos"/>
+		</list>
+	</section>
 </section>
