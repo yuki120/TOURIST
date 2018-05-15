@@ -52,6 +52,7 @@
 			<p>BuyItemComplete</p>
 		</div>
 		<div>
+			<p><img src="./images/thankyou.jpg"></p>
 			<p>購入手続きが完了いたしました。</p>
 			<div>
 				<a href='<s:url action="MyPageAction"/>'>マイページ</a><span>からの購入履歴の確認が可能です。</span>

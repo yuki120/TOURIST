@@ -13,27 +13,26 @@ public class MyPageDAO {
 	private DBConnector db = new DBConnector();
 	private Connection con = db.getConnection();
 
-	public ArrayList<MyPageDTO> getMyPageUserInfo(String item_transaction_id, String user_master_id) throws SQLException {
+	public ArrayList<MyPageDTO> getMyPageUserInfo(String user_master_id) throws SQLException {
 
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
-		String sql ="SELECT ubit.id, iit.item_name, ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date "
+		String sql ="SELECT ubit.id, pit.product_name, ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date "
 				+ "FROM user_buy_item_transaction ubit "
-				+ "LEFT JOIN item_info_transaction iit "
-				+ "ON ubit.item_transaction_id = iit.id "
-				+ "WHERE ubit.item_transaction_id = ? AND ubit.user_master_id = ? "
+				+ "LEFT JOIN product_info_transaction pit "
+				+ "ON ubit.item_transaction_id = pit.id "
+				+ "WHERE ubit.user_master_id = ? "
 				+ "ORDER BY insert_date DESC";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, item_transaction_id);
-			ps.setString(2, user_master_id);
+			ps.setString(1, user_master_id);
 			ResultSet rs = ps.executeQuery();
 
 			/* 取得した結果を1件ずつDTOに格納し、更にDTOをArrayListに格納。*/
 			while (rs.next()) {
 				MyPageDTO dto = new MyPageDTO();
 				dto.setId(rs.getString("id"));
-				dto.setItemName(rs.getString("item_name"));
+				dto.setProductName(rs.getString("product_name"));
 				dto.setTotalPrice(rs.getString("total_price"));
 				dto.setTotalCount(rs.getString("total_count"));
 				dto.setPayment(rs.getString("pay"));
@@ -48,16 +47,14 @@ public class MyPageDAO {
 		return myPageDTO;
 	}
 
-	public int buyItemHistoryDelete(String item_transaction_id, String user_master_id) throws SQLException {
+	public int buyProductHistoryDelete(String user_master_id) throws SQLException {
 
-		String sql ="DELETE FROM user_buy_item_transaction WHERE item_transaction_id = ? AND user_master_id = ?";
+		String sql ="DELETE FROM user_buy_item_transaction WHERE user_master_id = ?";
 		int result = 0;
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, item_transaction_id);
-			ps.setString(2, user_master_id);
-
+			ps.setString(1, user_master_id);
 			result = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

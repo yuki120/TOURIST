@@ -14,21 +14,30 @@ public class BuyProductCompleteDAO {
 	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id,"
 			+ "total_price, total_count, user_master_id, pay, insert_date) VALUES (?, ?, ?, ?, ?, ?)";
 
-	public void buyProductInfo(String item_transaction_id, String user_master_id, String total_price, String total_count, String pay) throws SQLException {
+	public void buyProductInfo(int item_transaction_id, String user_master_id, String total_price, int total_count, String pay, int product_stock) throws SQLException {
 
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
+		PreparedStatement ps;
 
 		try {
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, item_transaction_id);
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, item_transaction_id);
 			ps.setString(2, total_price);
-			ps.setString(3, total_count);
+			ps.setInt(3, total_count);
 			ps.setString(4, user_master_id);
 			ps.setString(5, pay);
 			ps.setString(6, dateUtil.getDate());
 
-			ps.execute();
+			int checkCount = ps.executeUpdate();
+			if (checkCount > 0) {
+				String sql2 = "UPDATE product_info_transaction SET product_stock = ? WHERE id = ?";
+
+				ps = con.prepareStatement(sql2);
+				ps.setInt(1, product_stock);
+				ps.setInt(2, item_transaction_id);
+				ps.executeUpdate();
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

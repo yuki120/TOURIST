@@ -11,7 +11,6 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyProductAction extends ActionSupport implements SessionAware {
 	private List<String> count;
-	private int pay;
 	public Map<String, Object> session;
 	private ArrayList<BuyProductDTO> buyProductDTOList = new ArrayList<BuyProductDTO>();
 	private String result;
@@ -57,23 +56,6 @@ public class BuyProductAction extends ActionSupport implements SessionAware {
 				session.put("totalPrice",intCount * intPrice);
 
 				/** ここまで合計 */
-
-				/** ここから支払い方法を選択する処理 */
-
-				String payment;
-
-				if(pay == 1) {
-
-					payment="現金払い";
-					session.put("pay",payment);
-					buyProductDTO.setPay(payment);
-
-				} else {
-					payment="クレジットカード";
-					session.put("pay",payment);
-					buyProductDTO.setPay(payment);
-				}
-				/** ここまで支払い選択処理 */
 
 				buyProductDTOList.add(buyProductDTO);
 			}
