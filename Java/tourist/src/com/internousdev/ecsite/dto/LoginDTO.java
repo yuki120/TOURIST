@@ -5,14 +5,16 @@ public class LoginDTO {
 	private String loginId;
 	private String loginPassword;
 	private String name;
+	private String nameKana;
 	private String address1;
 	private String address2;
 	private String sex;
 	private String email;
 	private String telNum;
+	private String postalCode;
+	private String userNumber;
 	private boolean loginFlg = false;
 	private boolean loginMaster = false;
-
 
 	public String getLoginId() {
 		return loginId;
@@ -36,6 +38,14 @@ public class LoginDTO {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getNameKana() {
+		return nameKana;
+	}
+
+	public void setNameKana(String nameKana) {
+		this.nameKana = nameKana;
 	}
 
 	public String getAddress1() {
@@ -78,6 +88,14 @@ public class LoginDTO {
 		this.telNum = telNum;
 	}
 
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
 	public boolean getLoginFlg () {
 		return loginFlg;
 	}
@@ -86,12 +104,20 @@ public class LoginDTO {
 		this.loginFlg = loginFlg;
 	}
 
-	public boolean getLoginMaster () {
+	public String getUserNumber() {
+		return userNumber;
+	}
+
+	public void setUserNumber(String userNumber) {
+		this.userNumber = userNumber;
+	}
+
+	public boolean getLoginMaster(){
 		return loginMaster;
 	}
 
-	public void setLoginMaster (boolean loginMaster) {
-		this.loginMaster = loginMaster;
+	public void setLoginMaster(boolean loginMaster){
+		this.loginMaster=loginMaster;
 	}
 
 }

@@ -1,0 +1,46 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.UserInfoUpdateCompleteDAO;
+import com.internousdev.ecsite.dto.LoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserInfoUpdateCompleteAction extends ActionSupport implements SessionAware {
+
+	public Map<String, Object> session;
+	private UserInfoUpdateCompleteDAO userInfoUpdateCompleteDAO = new UserInfoUpdateCompleteDAO();
+	@SuppressWarnings("unused")
+	private LoginDTO loginDTO = new LoginDTO();
+
+	public String execute() throws SQLException{
+
+		String result = ERROR;
+
+		boolean checkUpdate =userInfoUpdateCompleteDAO.userUpdateInfo (
+				session.get("loginId").toString(),
+				session.get("loginPassword").toString(),
+				session.get("name").toString(),
+				session.get("nameKana").toString(),
+				session.get("sex").toString(),
+				session.get("email").toString(),
+				session.get("telNum").toString(),
+				session.get("postalCode").toString(),
+				session.get("address1").toString(),
+				session.get("address2").toString(),
+				((LoginDTO) session.get("loginUser")).getUserNumber().toString());
+		if (checkUpdate) {
+			result = SUCCESS;
+		}
+
+		return result;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}

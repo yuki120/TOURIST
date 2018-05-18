@@ -28,6 +28,7 @@ public class HomeAction extends ActionSupport implements SessionAware {
 			buyProductDTOList = buyProductDAO.getBuyProductInfo();
 			session.put("buyProductDTOList", buyProductDTOList);
 			result = "master";
+
 		}
 
 		return result;

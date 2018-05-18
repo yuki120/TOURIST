@@ -27,14 +27,21 @@ public class LoginDAO {
 				loginDTO.setLoginId(rs.getString("login_id"));
 				loginDTO.setLoginPassword(rs.getString("login_pass"));
 				loginDTO.setName(rs.getString("name"));
+				loginDTO.setNameKana(rs.getString("name_kana"));
 				loginDTO.setAddress1(rs.getString("address1"));
 				loginDTO.setAddress2(rs.getString("address2"));
 				loginDTO.setSex(rs.getString("sex"));
 				loginDTO.setEmail(rs.getString("email"));
 				loginDTO.setTelNum(rs.getString("tel_num"));
+				loginDTO.setPostalCode(rs.getString("postal_code"));
+				loginDTO.setUserNumber(rs.getString("id"));
 
 				if (!(rs.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);
+				}
+
+				if(rs.getString("login_id").equals("master") && rs.getString("login_pass").equals("master01")){
+					loginDTO.setLoginMaster(true);
 				}
 			}
 		} catch (Exception e) {

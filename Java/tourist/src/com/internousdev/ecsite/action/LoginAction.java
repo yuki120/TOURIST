@@ -30,13 +30,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		// ログイン情報を比較
 		if(((LoginDTO) session.get("loginUser")).getLoginMaster()){
-			buyProductDTOList=buyProductDAO.getBuyProductInfo();
+			buyProductDTOList = buyProductDAO.getBuyProductInfo();
 			session.put("buyProductDTOList", buyProductDTOList);
 			session.put("masterId",loginUserId);
 			result = "master";
 		}
 
 		if(result != "master"){
+
 			/* データ型を強制的に(LoginDTO)に変更している。
 			 * getLoginFlg()のメソッドを呼び出すため。 */
 			if (((LoginDTO)session.get("loginUser")).getLoginFlg()) {
@@ -52,8 +53,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				session.put("name", loginDTO.getName());
 				session.put("address1", loginDTO.getAddress1());
 				session.put("address2", loginDTO.getAddress2());
-				session.put("email", loginDTO.getEmail());
-				session.put("tel_num", loginDTO.getTelNum());
 			}
 		}
 		return result;

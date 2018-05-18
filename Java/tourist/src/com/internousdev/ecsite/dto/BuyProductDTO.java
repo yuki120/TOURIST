@@ -2,7 +2,7 @@ package com.internousdev.ecsite.dto;
 
 public class BuyProductDTO {
 	private int id;
-	private int categoryId;
+	private String productCategory;
 	private String productName;
 	private String productPrice;
 	private int productStock;
@@ -20,12 +20,12 @@ public class BuyProductDTO {
 		this.id = id;
 	}
 
-	public int getCategoryId() {
-		return categoryId;
+	public String getProductCategory() {
+		return productCategory;
 	}
 
-	public void setCategoryId (int categoryId) {
-		this.categoryId = categoryId;
+	public void setProductCategory (String productCategory) {
+		this.productCategory = productCategory;
 	}
 
 	public String getProductName() {

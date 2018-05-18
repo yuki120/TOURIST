@@ -407,3 +407,11 @@
 0:0:0:0:0:0:0:1 - - [15/May/2018:17:10:13 +0900] "GET /tourist/BuyProductConfirmAction.action HTTP/1.1" 200 3240
 0:0:0:0:0:0:0:1 - - [15/May/2018:17:10:14 +0900] "GET /tourist/MyPageAction.action HTTP/1.1" 200 5507
 0:0:0:0:0:0:0:1 - - [15/May/2018:17:10:27 +0900] "GET /tourist/LoginAction.action HTTP/1.1" 200 3893
+127.0.0.1 - - [15/May/2018:17:12:11 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:15 +0900] "GET /ecsite/ HTTP/1.1" 200 1668
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:17 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2270
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:28 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 10844
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:38 +0900] "POST /ecsite/BuyItemAction.action HTTP/1.1" 200 2926
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:42 +0900] "POST /ecsite/BuyItemConfirmAction HTTP/1.1" 200 1743
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:44 +0900] "GET /ecsite/MyPageAction.action HTTP/1.1" 200 4172
+0:0:0:0:0:0:0:1 - - [15/May/2018:17:12:53 +0900] "POST /ecsite/MyPageAction.action HTTP/1.1" 200 2259

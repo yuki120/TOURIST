@@ -1,0 +1,54 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+
+public class UserInfoUpdateCompleteDAO {
+
+	private DBConnector db = new DBConnector();
+	private Connection con = db.getConnection();
+	private DateUtil dateUtil = new DateUtil();
+
+
+	public boolean userUpdateInfo(String login_id, String login_pass, String name, String name_kana,
+			String sex, String email,String tel_num, String postal_code, String address1, String address2,String defaultLoginId) throws SQLException{
+
+		String sql ="UPDATE login_user_transaction "
+				+ "SET login_id = ?, login_pass = ?, name = ?, name_kana = ?, "
+				+ "sex = ?, email = ?, tel_num = ?, postal_code = ?, "
+				+ "address1 = ?, address2 = ?, updated_date = ? "
+				+ "WHERE id = ?";
+
+		boolean result = false;
+
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, login_id);
+			ps.setString(2, login_pass);
+			ps.setString(3, user_name);
+			ps.setString(4, user_address);
+			ps.setString(5, user_address1);
+			ps.setString(8, user_sex);
+			ps.setString(9, user_tell);
+			ps.setString(10, dateUtil.getDate());
+			ps.setString(11, defaultLoginId);
+
+			int checkUpdate = ps.executeUpdate();
+
+			if(checkUpdate > 0){
+				result = true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			con.close();
+		}
+		return result;
+
+
+	}
+}

@@ -26,7 +26,7 @@ public class BuyProductDAO {
 			while (rs.next()) {
 				BuyProductDTO buyProductDTO = new BuyProductDTO();
 				buyProductDTO.setId(rs.getInt("id"));
-				buyProductDTO.setCategoryId(rs.getInt("category_id"));
+				buyProductDTO.setProductCategory(rs.getString("product_category"));
 				buyProductDTO.setProductName(rs.getString("product_name"));
 				buyProductDTO.setProductPrice(rs.getString("product_price"));
 				buyProductDTO.setProductStock(rs.getInt("product_stock"));
