@@ -10,7 +10,8 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>masterProductUpdate画面</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<title>MasterProductUpdate画面</title>
 
 	<style type="text/css">
 		body {
@@ -21,7 +22,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -30,7 +31,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -46,7 +47,18 @@
 			text-aligan: center;
 		}
 
+		.btn input {
+			margin: 15px;
+		}
+
+
 	</style>
+	<script type="text/javascript">
+		function submitAction(url) {
+			$('form').attr('action', url);
+			$('form').submit();
+		}
+	</script>
 </head>
 <body>
 
@@ -54,23 +66,23 @@
 
 	<div id="main">
 		<div id="top">
-			<p>MasterProductUpdate</p>　
+			<p>MasterProductUpdate</p>
 		</div>
 		<div>
-			<s:form action="MasterProductUpdateInputAction">
+			<s:form action="MasterProductUpdateConfirmAction">
 				<s:iterator value="buyProductDTOList">
 					<tr>
-						<td><input type="checkbox" name="productName" value="<s:property value='productName'/>"></td>
+						<td><input type="radio" name="id" checked="checked" value="<s:property value='id'/>"></td>
 						<td><s:property value="productName"/></td>
 					</tr>
 					<tr>
 						<td><br></td>
 					</tr>
 				</s:iterator>
-				<s:submit class="btn" value="選択"/>
 			</s:form>
-			<div>
-				<a href='<s:url action="MasterAction"/>'>戻る</a>
+			<div class="btn">
+				<input type="button" value="戻る" onclick="submitAction('MasterPageAction')" />
+				<input type="button" value="選択" onclick="submitAction('MasterProductUpdateConfirmAction')" />
 			</div>
 		</div>
 	</div>

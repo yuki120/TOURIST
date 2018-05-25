@@ -39,12 +39,21 @@
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MyPageDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MasterProductUpdateDAO"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MasterNewProductDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MasterNewProductDTO"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyProductDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MasterProductDeleteDAO"/>
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MasterReviewDeleteDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ReviewDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.ReviewDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ReviewSearchDAO"/>
 </qualifiedTypeNameHistroy>

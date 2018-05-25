@@ -1,0 +1,64 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.BuyProductDAO;
+import com.internousdev.ecsite.dao.LoginDAO;
+import com.internousdev.ecsite.dao.ReviewDAO;
+import com.internousdev.ecsite.dto.BuyProductDTO;
+import com.internousdev.ecsite.dto.LoginDTO;
+import com.internousdev.ecsite.dto.ReviewDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MasterPageAction extends ActionSupport implements SessionAware {
+
+	public Map<String, Object> session;
+
+	public String execute() {
+
+		LoginDAO loginDAO = new LoginDAO();
+		LoginDTO loginDTO = new LoginDTO();
+		BuyProductDAO buyProductDAO = new BuyProductDAO();
+		BuyProductDTO buyProductDTO = new BuyProductDTO();
+		ReviewDAO reviewDAO = new ReviewDAO();
+		ReviewDTO reviewDTO = new ReviewDTO();
+
+		if(((LoginDTO) session.get("loginUser")).getLoginMaster()){
+			buyProductDTOList = buyProductDAO.getBuyProductInfo();
+			session.put("buyProductDTOList", buyProductDTOList);
+			session.put("id",loginUserId);
+
+			reviewDTOList = reviewDAO.getReviewInfo();
+			session.put("reviewDTOList", reviewDTOList);
+			session.put("reviewId", reviewDTO.getId());
+
+			session.put("login_user_id",loginDTO.getLoginId());
+			session.put("name", loginDTO.getName());
+			session.put("sex", loginDTO.getSex());
+			session.put("address1", loginDTO.getAddress1());
+			session.put("address2", loginDTO.getAddress2());
+			session.put("telNum", loginDTO.getTelNum());
+			session.put("email", loginDTO.getEmail());
+
+			result = "master";
+		}
+
+		if (!session.containsKey("id")) {
+			return ERROR;
+		}
+
+		return SUCCESS;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	@Override
+	public void setSession (Map<String, Object> session) {
+		this.session = session;
+	}
+
+}

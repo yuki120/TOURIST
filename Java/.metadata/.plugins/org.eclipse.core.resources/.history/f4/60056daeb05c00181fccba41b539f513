@@ -1,0 +1,12 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+
+import com.internousdev.ecsite.util.DBConnector;
+
+public class MasterProductUpdateCompleteDAO {
+
+	private DBConnector db = new DBConnector();
+	private Connection con = db.getConnection();
+	private DateUtil dateUtil = new DateUtil();
+}

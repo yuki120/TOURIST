@@ -65,7 +65,8 @@
 
 	<ul>
 		<li><a class="link" href='<s:url action="LoginAction" />'>LOGIN</a></li>
-		<li><a class="link" href='<s:url action="ReviewAction" />'>REVIEW</a></li>
+		<li><a class="link" href='<s:url action="ProductShowAction" />'>PRODUCTS</a></li>
+		<li><a class="link" href='<s:url action="GoReviewAction" />'>REVIEW</a></li>
 		<li><a class="link" href='<s:url action="MyPageAction" />'>MY PAGE</a></li>
 		<li><a class="link" href='<s:url action="LogoutAction" />'>LOGOUT</a></li>
 	</ul>

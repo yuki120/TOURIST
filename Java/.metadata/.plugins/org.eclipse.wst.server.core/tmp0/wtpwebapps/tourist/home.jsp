@@ -84,13 +84,20 @@
 			<p>TOURIST</p>
 		</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<div id="text-center">
-			<s:form action="HomeAction">
-				<s:submit class="btn" value="商品を見る"/>
-			</s:form>
-			<s:if test="#session.id != null">
+			<s:if test="#session.id != null || #session.masterId != null">
+				<s:form action="HomeAction">
+					<s:submit class="btn" value="商品を見る"/>
+				</s:form>
 				<p>ログアウトする場合は
 				<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</s:if>
+
+			<s:else>
+				<s:form action="HomeAction">
+					<s:submit class="btn" value="★ログイン★"/>
+				</s:form>
+			</s:else>
+
 		</div>
 	</div>
 

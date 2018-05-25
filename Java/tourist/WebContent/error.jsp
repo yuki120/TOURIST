@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -30,7 +30,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -57,7 +57,7 @@
 			<p>Error</p>
 		</div>
 		<div>
-			<h2>マイページをご利用の際は、<br>お先にログインをお願いいたします。</h2><br>
+			<h2>こちらのページをご利用の際は、<br>お先にログインをお願いいたします。</h2><br>
 			<p>☆ログインは<a href='<s:url action="LoginAction" />'>こちら</a>☆</p>
 		</div>
 	</div>

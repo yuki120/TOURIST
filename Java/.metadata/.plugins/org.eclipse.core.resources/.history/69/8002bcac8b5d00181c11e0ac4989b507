@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="com.internousdev.ecsite.action" extends="struts-default">
+
+		<action name="GoHomeAction" class="com.internousdev.ecsite.action.GoHomeAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<!-- ログイン認証 -->
+		<action name="HomeAction" class="com.internousdev.ecsite.action.HomeAction" method="execute">
+			<result name="login">login.jsp</result>
+			<result name="success">buyProduct.jsp</result>
+			<result name="master">master.jsp</result>
+		</action>
+
+		<action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
+			<result name="success">buyProduct.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="master">master.jsp</result>
+		</action>
+
+		<!-- 新規ユーザー登録 -->
+		<action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method="execute">
+			<result name="success">userCreate.jsp</result>
+			<result name="back">login.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction" class="com.internousdev.ecsite.action.UserCreateConfirmAction" method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateBackAction" class="com.internousdev.ecsite.action.UserCreateBackAction" method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+		</action>
+
+		<!-- 商品購入 -->
+		<action name="BuyProductAction" class="com.internousdev.ecsite.action.BuyProductAction" method="execute">
+			<result name="success">buyProductConfirm.jsp</result>
+			<result name="error">buyProduct.jsp</result>
+		</action>
+
+		<action name="BuyProductUserInfoConfirmAction" class="com.internousdev.ecsite.action.BuyProductUserInfoConfirmAction" method="execute">
+			<result name="success">buyProductUserInfoConfirm.jsp</result>
+			<result name="back">buyProductConfirm.jsp</result>
+		</action>
+
+		<action name="BuyProductConfirmAction" class="com.internousdev.ecsite.action.BuyProductConfirmAction" method="execute">
+			<result name="success">buyProductComplete.jsp</result>
+			<result name="back">buyProduct.jsp</result>
+		</action>
+
+		<action name="BuyProductCompleteAction" class="com.internousdev.ecsite.action.BuyProductCompleteAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<!-- 商品検索 -->
+		<action name="ProductSearchAction" class="com.internousdev.ecsite.action.ProductSearchAction" method="execute">
+			<result name="success">buyProduct.jsp</result>
+			<result name="error">buyProduct.jsp</result>
+		</action>
+
+		<!-- 商品レビュー -->
+		<action name="ReviewAction" class="com.internousdev.ecsite.action.ReviewAction" method="execute">
+			<result name="success">review.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="ReviewConfirmAction" class="com.internousdev.ecsite.action.ReviewConfirmAction" method="execute">
+			<result name="success">reviewConfirm.jsp</result>
+			<result name="error">review.jsp</result>
+		</action>
+
+		<action name="ReviewBackAction" class="com.internousdev.ecsite.action.ReviewBackAction" method="execute">
+			<result name="success">review.jsp</result>
+		</action>
+
+
+
+		<!-- マイページ -->
+		<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">
+			<result name="success">myPage.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 購入履歴 -->
+		<action name="PurchaseHistoryAction" class="com.internousdev.ecsite.action.PurchaseHistoryAction" method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+		</action>
+
+		<!-- ユーザー登録情報更新 -->
+		<action name="UserInfoUpdateAction" class="com.internousdev.ecsite.action.UserInfoUpdateAction" method="execute">
+			<result name="success">userInfoUpdate.jsp</result>
+		</action>
+
+		<action name="UserInfoUpdateConfirmAction" class="com.internousdev.ecsite.action.UserInfoUpdateConfirmAction" method="execute">
+			<result name="success">userInfoUpdateConfirm.jsp</result>
+		</action>
+
+		<action name="UserInfoUpdateCompleteAction" class="com.internousdev.ecsite.action.UserInfoUpdateCompleteAction" method="execute">
+			<result name="success">userInfoUpdateComplete.jsp</result>
+		</action>
+
+		<!-- 管理者・商品情報更新 -->
+		<action name="MasterProductUpdateAction" class="com.internousdev.ecsite.action.MasterProductUpdateAction" method="execute">
+			<result name="success">masterProductUpdate.jsp</result>
+		</action>
+
+		<action name="MasterProductUpdateInputAction" class="com.internousdev.ecsite.action.MasterProductUpdateInputAction" method="execute">
+			<result name="success">masterProductUpdateInput.jsp</result>
+		</action>
+
+		<action name="MasterProductUpdateCompleteAction" class="com.internousdev.ecsite.action.MasterProductUpdateCompleteAction" method="execute">
+			<result name="success">masterProductUpdateComplete.jsp</result>
+		</action>
+
+		<!-- 管理者・商品新規登録 -->
+		<action name="MasterNewProductAction" class="com.internousdev.ecsite.action.MasterNewProductAction" method="execute">
+			<result name="success">masterNewProduct.jsp</result>
+		</action>
+
+		<action name="MasterNewProductConfirmAction" class="com.internousdev.ecsite.action.MasterNewProductConfirmAction" method="execute">
+			<result name="success">masterNewProductConfirm.jsp</result>
+			<result name="error">masterNewProduct.jsp</result>
+		</action>
+
+		<action name="MasterNewProductCompleteAction" class="com.internousdev.ecsite.action.MasterNewProductCompleteAction" method="execute">
+			<result name="success">masterNewProductComplete.jsp</result>
+		</action>
+
+		<!-- 管理者・商品削除 -->
+		<action name="MasterProductDeleteAction" class="com.internousdev.ecsite.action.MasterProductDeleteAction" method="execute">
+			<result name="success">masterProductDelete.jsp</result>
+		</action>
+
+		<action name="MasterProductDeleteConfirmAction" class="com.internousdev.ecsite.action.MasterProductDeleteConfirmAction" method="execute">
+			<result name="success">masterProductDeleteConfirm.jsp</result>
+		</action>
+
+		<action name="MasterProductDeleteCompleteAction" class="com.internousdev.ecsite.action.MasterProductDeleteCompleteAction" method="execute">
+			<result name="success">masterProductDeleteComplete.jsp</result>
+		</action>
+
+		<!-- ログアウト -->
+		<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
+			<result name="success">logout.jsp</result>
+		</action>
+
+	</package>
+</struts>

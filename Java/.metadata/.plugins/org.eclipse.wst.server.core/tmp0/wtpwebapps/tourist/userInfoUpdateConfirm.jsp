@@ -11,7 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<title>UserInfoUpdate画面</title>
+	<title>UserInfoUpdateConfirm画面</title>
 
 	<style type="text/css">
 		body {
@@ -22,7 +22,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -32,7 +32,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -68,7 +68,7 @@
 
 	<div id="main">
 		<div id="top">
-			<p>UserInfoUpdate</p>
+			<p>UserInfoUpdateConfirm</p>
 		</div>
 		<div>
 			<h3>変更内容は以下でよろしいでしょうか？</h3>

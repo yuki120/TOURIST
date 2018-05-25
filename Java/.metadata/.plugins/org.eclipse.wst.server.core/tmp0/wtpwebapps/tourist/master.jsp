@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>master画面</title>
+	<title>Master画面</title>
 
 	<style type="text/css">
 		body {
@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -30,7 +30,8 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
+			height: 42px;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -39,6 +40,10 @@
 			width: 100%;
 			height: 500px;
 			text-align: center;
+		}
+
+		#color {
+			color: red;
 		}
 
 	</style>
@@ -57,9 +62,11 @@
 			<div>
 				<p>更新する内容を選択してください。</p>
 				<p>☆<a href='<s:url action="MasterProductUpdateAction"/>'>商品情報更新</a>☆</p>
-				<p>☆<a href='<s:url action="MasterProductAddAction"/>'>新商品追加</a>☆</p>
-				<p>☆<a href='<s:url action="MasterProductDeleteAction"/>'>商品削除</a>☆</p><br>
+				<p>☆<a href='<s:url action="MasterNewProductAction"/>'>新商品追加</a>☆</p>
+				<p>☆<a href='<s:url action="MasterProductDeleteAction"/>'>商品削除</a>☆</p>
+				<p>☆<a href='<s:url action="MasterReviewDeleteAction"/>'>レビュー削除</a>☆</p><br>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+				<p id="color">※作業終了後は必ずログアウトしてください。</p>
 			</div>
 		</div>
 	</div>

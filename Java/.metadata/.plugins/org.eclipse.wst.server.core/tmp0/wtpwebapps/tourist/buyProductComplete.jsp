@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>buyProductComplete画面</title>
+	<title>BuyProductComplete画面</title>
 
 	<style type="text/css">
 		body {
@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -30,7 +30,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -49,7 +49,7 @@
 
 	<div id="main">
 		<div id="top">
-			<p>BuyItemComplete</p>
+			<p>BuyProductComplete</p>
 		</div>
 		<div>
 			<p><img src="./images/thankyou.jpg"></p>

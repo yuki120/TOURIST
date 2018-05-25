@@ -21,7 +21,8 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
+
 		}
 
 		table {
@@ -30,14 +31,14 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
 
 		#main {
 			width: 100%;
-			height: 500px;
+			height: 100%;
 			text-align: center;
 		}
 
@@ -57,7 +58,7 @@
 			<p>Login</p>
 		</div>
 		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
+			<h3>ログインをお願いします。</h3>
 			<s:form action="LoginAction">
 				<s:textfield name="loginUserId" placeholder="USERID"/>
 				<s:password name="loginPassword" placeholder="PASSWORD"/>
@@ -75,7 +76,7 @@
 		</div>
 	</div>
 
-	<s:include value="footer.jsp" />
+	<s:include  value="footer.jsp" />
 
 </body>
 </html>

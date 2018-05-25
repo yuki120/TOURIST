@@ -1,0 +1,59 @@
+package com.internousdev.ecsite.action;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dto.ReviewDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MasterReviewDeleteConfirmAction extends ActionSupport implements SessionAware {
+
+	private List<String> comment;
+	private ArrayList<ReviewDTO> reviewDeleteList = new ArrayList<>();
+	public Map<String,Object> session;
+
+	public String execute(){
+
+		session.put("comment", comment);
+		session.put("reviewDeleteListSize", comment.size());
+
+
+		for (int i=0; i<comment.size(); i++) {
+
+			String comments = comment.get(i);
+
+			ReviewDTO dto = new ReviewDTO();
+
+			dto.setComments(comments);
+
+			reviewDeleteList.add(dto);
+			session.put("reviewDeleteList", reviewDeleteList);
+		}
+		String result=SUCCESS;
+		return result;
+	}
+
+	public List<String> getComment() {
+		return comment;
+	}
+
+	public void setComment(List<String> comment) {
+		this.comment = comment;
+	}
+
+	public ArrayList<BuyReviewDTO> getReviewDeleteList() {
+		return reviewDeleteList;
+	}
+	public void setReviewDeleteList(ArrayList<BuyReviewDTO> reviewDeleteList) {
+		this.reviewDeleteList = reviewDeleteList;
+	}
+
+	@Override
+	public void setSession(Map<String,Object> session) {
+		this.session=session;
+	}
+
+}

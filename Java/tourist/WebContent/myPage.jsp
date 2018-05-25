@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>myPage画面</title>
+	<title>MyPage画面</title>
 
 	<style type="text/css">
 		body {
@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -30,7 +30,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -55,9 +55,9 @@
 			<h2><s:property value="session.name"/>様のマイページ</h2>
 
 			<div>
-				<p><a href='<s:url action="PurchaseHistoryAction"/>'>購入履歴</a><span>　⇒　購入履歴の確認が可能です。</span></p>
-				<p><a href='<s:url action="UserInfoUpdateAction"/>'>ユーザー情報の変更</a><span>　⇒　ユーザー登録情報の変更が可能です。</span></p><br>
-				<p><a href='<s:url action="GoHomeAction"/>'>ホーム画面へ戻る</a></p>
+				<p><a href='<s:url action="PurchaseHistoryAction"/>'>☆購入履歴☆</a><span>　⇒　購入履歴の確認が可能です。</span></p>
+				<p><a href='<s:url action="UserInfoUpdateAction"/>'>☆ユーザー情報の変更☆</a><span>　⇒　ユーザー登録情報の変更が可能です。</span></p><br>
+				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 			</div>
 		</div>
 	</div>

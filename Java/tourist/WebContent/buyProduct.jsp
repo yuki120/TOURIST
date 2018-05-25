@@ -11,7 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<title>buyProduct画面</title>
+	<title>Products画面</title>
 
 	<style type="text/css">
 		body {
@@ -22,7 +22,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -42,6 +42,7 @@
 
 		#main {
 			width: 100%;
+			height: 100%;
 			padding-bottom: 150px;
 			text-align: center;
 		}
@@ -56,7 +57,7 @@
 			height: 300px;
 			display: inline;
 			float: left;
-			margin-left: 20px;
+			margin-left: 30px;
 			margin-bottom: 100px;
 		}
 
@@ -98,7 +99,7 @@
 
 	<div id="main">
 		<div id="top">
-			<p>buyProduct</p>
+			<p>Products</p>
 		</div>
 
 		<div class="product_search">

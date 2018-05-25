@@ -1,9 +1,9 @@
 set names utf8;
 set foreign_key_checks = 0;
-drop database if exists ecsite;
+drop database if exists ecsite_takada;
 
-create database if not exists ecsite;
-use ecsite;
+create database if not exists ecsite_takada;
+use ecsite_takada;
 
 drop table if exists login_user_transaction;
 
@@ -50,6 +50,19 @@ create table user_buy_item_transaction(
 	update_date datetime
 );
 
+drop table if exists user_review_transaction;
+
+create table user_review_transaction(
+	id int not null primary key auto_increment,
+	product_name varchar (32) not null,
+	user_master_id varchar(16) not null,
+	handle_name varchar(16) not null,
+	title varchar(50) not null,
+	comment varchar(255) not null,
+	insert_date datetime,
+	update_date datetime
+);
+
 
 INSERT INTO login_user_transaction(login_id, login_pass, name, name_kana, sex, email, tel_num, postal_code, address1, address2)
 VALUES ("master", "master01", "管理者", "かんりしゃ", "man", "master@gmail.com", "000-0000-0000", "000-0000", "東京都", ""),
@@ -71,3 +84,7 @@ VALUES("ヨーロッパ", "パリ8日間の旅", 269000, 10, "オプション満
 ("オーストラリア", "ケアンズ5日間の旅", 130000, 10, "グレートバリアリーフが楽しめる！", "./images/keans.jpg"),
 ("オーストラリア", "ゴールドコースト5日間の旅", 120000, 10, "世界遺産の熱帯雨林を巡る！", "./images/goldcoast.jpg"),
 ("オーストラリア", "メルボルン6日間の旅", 140000, 10, "英国風のオシャレな街を散策！", "./images/melbourn.jpg");
+
+INSERT INTO user_review_transaction(product_name, user_master_id, handle_name, title, comment)
+VALUES ("パリ8日間の旅", "taro", "たろきち", "楽しかった！", "パリのいろんな観光名所を見て回ることができて、非常に有意義な時間を過ごすことができました！"),
+("台北3日間の旅", "taro", "くまもん", "暑かった！", "めちゃくちゃ暑かったけど、おいしいものがたくさん食べられて、とてもたのしかった！");

@@ -11,7 +11,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 
-		if (!session.containsKey("id")) {
+		if (!session.containsKey("id") && !session.containsKey("masterId")) {
 			return ERROR;
 		}
 

@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -41,7 +41,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -75,7 +75,7 @@
 			<p>PurchaseHistory</p>
 		</div>
 		<div>
-			<s:if test="purchaseHistoryDTOList == null">
+			<s:if test="purchaseHistoryDTOList.size() == 0">
 				<h2>ご購入情報はありません。</h2>
 			</s:if>
 			<s:elseif test="message == null">
@@ -114,7 +114,7 @@
 				<h3><s:property value="message"/></h3>
 			</s:if>
 			<div id="text-right">
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+				<p>MyPageへ戻る場合は<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</div>
 		</div>

@@ -1,0 +1,87 @@
+package com.internousdev.ecsite.action;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.MasterProductUpdateDAO;
+import com.internousdev.ecsite.dto.BuyProductDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MasterProductUpdateInputAction extends ActionSupport implements SessionAware {
+
+	private List<String> name;
+	private int id;
+	private ArrayList<BuyProductDTO> productUpdateList = new ArrayList<BuyProductDTO>();
+	private List<BuyProductDTO> list = new ArrayList<>();
+	private MasterProductUpdateDAO dao = new MasterProductUpdateDAO();
+	public Map<String,Object> session;
+
+	public String execute(){
+
+		System.out.println(name);
+		System.out.println(name.size());
+
+		session.put("name", name);
+		session.put("productUpdateListSize", name.size());
+
+
+		for (int i=0; i < name.size(); i++) {
+
+			String productName = name.get(i);
+
+			System.out.println(productName);
+
+			BuyProductDTO dto = new BuyProductDTO();
+
+			dto.setProductName(productName);
+
+			productUpdateList.add(dto);
+			session.put("productUpdateList", productUpdateList);
+		}
+
+
+		list = dao.ProductUpdateInfo(id);
+
+		String selectName=list.get(0).getItemName();
+		String selectPrice=list.get(0).getItemPrice();
+		int selectStock=list.get(0).getItem_stock();
+
+		session.put("itemName", selectName);
+		session.put("itemPrice", selectPrice);
+		session.put("itemStock", selectStock);
+
+
+		session.put("updateId", id);
+
+		System.out.println(id);
+
+
+		String result=SUCCESS;
+		return result;
+	}
+
+	public List<String> getname(){
+		return name;
+	}
+
+	public void setname(List<String> name){
+		this.name = name;
+	}
+
+	public ArrayList<BuyProductDTO> getProductUpdateList(){
+		return productUpdateList;
+	}
+	public void setProductUpdateList(ArrayList<BuyProductDTO> productUpdateList){
+		this.productUpdateList = productUpdateList;
+	}
+
+
+	@Override
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+
+}

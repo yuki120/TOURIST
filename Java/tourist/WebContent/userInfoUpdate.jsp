@@ -21,7 +21,7 @@
 			font-family: Verdana, Helvetica, sans-serif;
 			font-size: 12px;
 			color: #333;
-			background: #fff;
+			background: url(./images/watermark.jpg) center center / cover no-repeat fixed;
 		}
 
 		table {
@@ -31,7 +31,7 @@
 		}
 
 		#top {
-			width: 780px;
+			width: 80%;
 			margin: 30px auto;
 			border: 1px solid #333;
 		}
@@ -106,9 +106,9 @@
 							<label>性別：</label>
 						</td>
 						<td>
-							<s:if test='session.loginUser.sex == "man"'>
-							<input type="radio" name="sex" value="男" checked="checked">男
-							<input type="radio" name="sex" value="女">女
+							<s:if test="session.loginUser.sex != 'woman'">
+								<input type="radio" name="sex" value="男" checked="checked">男
+								<input type="radio" name="sex" value="女">女
 							</s:if>
 							<s:else>
 								<input type="radio" name="sex" value="男">男
