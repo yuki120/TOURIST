@@ -51,13 +51,17 @@
 			margin-bottom: 30px;
 		}
 
+		.main_container {
+			padding-left: 10%;
+		}
+
 		.review-list {
 			width: 400px;
 			height: 300px;
 			display: inline;
 			float: left;
-			margin-left: 100px;
-			margin-bottom: 70px;
+			margin-left: 10%;
+			margin-bottom: 7%;
 			background-repeat: no-repeat;
 		}
 

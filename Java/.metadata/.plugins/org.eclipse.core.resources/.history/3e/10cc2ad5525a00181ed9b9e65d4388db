@@ -1,7 +1,0 @@
-package com.internousdev.ecsite.dao;
-
-public class ProductSearchDAO {
-
-	private DBConnector db = new DBConnector();
-
-}

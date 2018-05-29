@@ -15,14 +15,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="comment"/>
+			<item value="name"/>
 			<item value="buyProduct"/>
 			<item value="product"/>
-			<item value="name"/>
 			<item value="BuyProduct"/>
 			<item value="ReviewDTO"/>
 			<item value="item"/>
 			<item value="Item"/>
-			<item value="String"/>
 		</list>
 		<list key="replacehistory">
 			<item value="review"/>

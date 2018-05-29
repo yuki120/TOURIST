@@ -52,13 +52,17 @@
 			margin-bottom: 30px;
 		}
 
+		.main_container {
+			padding-left: 6%;
+		}
+
 		.product-list {
-			width: 350px;
-			height: 300px;
+			width: 27%;
+			height: 25%;
 			display: inline;
 			float: left;
-			margin-left: 30px;
-			margin-bottom: 100px;
+			margin-left: 3%;
+			margin-bottom: 5%;
 		}
 
 		.product-list img {
