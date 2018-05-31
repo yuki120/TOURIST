@@ -1,7 +1,0 @@
-package com.internousdev.ecsite.dao;
-
-public class MasterProductUpdateCompleteDAO {
-
-	private DBConnedter db = new DBConnector();
-	private Connection con = new getConnection();
-}
